@@ -1,0 +1,40 @@
+#!/bin/sh
+# Plik: ~/.config/river/river-init
+# Konfiguracja River: Plasma-like desktop + fullscreen Android 15 launcher
+
+# Ustaw tapetę
+wbg ~/Pictures/wallpaper.jpg &
+
+# Uruchom panel systemowy
+waybar &
+
+# Uruchom dock
+plank &
+
+# Powiadomienia
+mako &
+
+# Ustawienia wyświetlaczy
+nwg-displays &
+
+# Terminal i launcher skróty
+riverctl map normal Mod4 Return "alacritty"          # Super+Enter terminal
+riverctl map normal Mod4 d "rofi -show drun"        # Super+D launcher
+
+# Skróty do zarządzania oknami
+riverctl map normal Mod4 q "riverctl close-focused"
+riverctl map normal Mod4 h "riverctl focus left"
+riverctl map normal Mod4 l "riverctl focus right"
+riverctl map normal Mod4 j "riverctl focus down"
+riverctl map normal Mod4 k "riverctl focus up"
+
+# Uruchomienie pełnoekranowego menu aplikacji w stylu Androida
+# Podwójne kliknięcie pulpitu (alternatywnie Super+M)
+fullscreen_launcher() {
+    rofi -show drun -fullscreen -theme ~/.config/rofi/style.rasi
+}
+
+# W River nie ma natywnego "double-click desktop", więc używamy Super+M jako trigger
+riverctl map normal Mod4 m "fullscreen_launcher &"
+
+# Funkcja można też podpiąć pod kliknięcia, jeśli zrobisz własny skrypt monitorujący events
