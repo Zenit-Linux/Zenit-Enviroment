@@ -1,0 +1,40 @@
+/* android15.rasi - styl przypominający Android 15 */
+configuration {
+    modi: "drun";
+    show-icons: true;
+    fullscreen: true;
+    grid-columns: 5;   /* liczba kolumn ikon */
+    grid-row-height: 120;
+    grid-item-padding: 20px;
+    hide-scrollbar: true;
+    opacity: 0.95;
+}
+
+window {
+    background-color: #1E1E1E;
+    border: 0px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+mainbox {
+    spacing: 10px;
+}
+
+element {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2A2A2A;
+    hover-color: #3A3A3A;
+}
+
+element-icon {
+    size: 48px;
+    margin: 0px;
+}
+
+element-text {
+    color: #FFFFFF;
+    font: "Roboto 12";
+    padding-top: 5px;
+}
